@@ -9,15 +9,10 @@ public class insertingAtParticularIndex {
         for(int i=0;i<n;i++){
             arr[i]=sc.nextInt();
         }
-        String res="";
-        int count=0;
-        for(int i=0;i<str.length();i++){
-            if(i==arr[count]){
-                res=res+'*';
-                count++;
-            }
-            res=res+str.charAt(i);
+        StringBuilder sb = new StringBuilder(str);
+        for(int i=0;i<n;i++){
+            sb.insert(arr[i]+1, '*');
         }
-        System.out.println(res);
+        System.out.println(sb.toString());
     }
 }
