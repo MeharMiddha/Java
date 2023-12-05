@@ -10,13 +10,18 @@ public class bubbleSort1 {
             arr[i]=sc.nextInt();
         }
         for(int i=0;i<n-1;i++){
+            boolean swapped = false;  // it is used if our array is sorted in less iterations then we can end the loop there and get our result in less time
             for(int j=0;j<n-i-1;j++){
                 if(arr[j+1]<arr[j]){
+                    swapped=true;
                     int temp=arr[j+1];
                     arr[j+1]=arr[j];
                     arr[j]=temp;
                     swapCount++;
                 }
+            }
+            if(swapped==false){
+                break;
             }
         }
         System.out.println("Total Swap Count in this : "+swapCount);
